@@ -1,0 +1,20 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "ts-node",
+      "type": "node",
+      "request": "launch",
+      "args": ["${relativeFile}"],
+      "runtimeArgs": ["-r", "ts-node/register", "--preserve-symlinks"],
+      "cwd": "${workspaceRoot}",
+      "program": "src/index.ts",
+      "runtimeExecutable": "/Users/xxnull/.nvm/versions/node/v18.1.0/bin/node",
+      "internalConsoleOptions": "openOnSessionStart",
+
+      "console": "externalTerminal",
+      "autoAttachChildProcesses": true,
+      "outputCapture": "std"
+    }
+  ]
+}
