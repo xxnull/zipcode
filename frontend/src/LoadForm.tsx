@@ -73,6 +73,10 @@ function LoadForm(
   );
 }
 
+// function resetHistory() {
+
+// }
+
 /**
  * HandleSubmit is a function that takes in an event, a mutator, a zipinput, and a country, and then
  * prevents the default action of the event, and then calls the mutator with the zipinput and country

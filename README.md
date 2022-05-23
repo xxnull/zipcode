@@ -47,3 +47,5 @@ Search for the zipcode you want!
 - Map markers
 - Unit test
 - Nice looking flags on select input
+- I didn't have enough time to implement the reset history button.
+- The backend is ready to accept the query to delete records.
