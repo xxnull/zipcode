@@ -4,11 +4,11 @@ Zipcode is a Fullstack App.
 It's backend includes Apollo Server 3, Postgres, TypeGraphql and Express
 It's frontend includes Apollo client 3, Create React App, GoogleMaps among others
 
+Zipcode rely on zippopotam and its limited list of countries zip codes and return the information related to a zipcode and its location in a map.
+
 ## Pre-Requisites
 
-Docker
-Docker Compose
-NodeJS v14.19.0
+Docker, Docker Compose, NodeJS v14.19.0
 
 ## Installation
 
