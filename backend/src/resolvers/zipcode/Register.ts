@@ -7,6 +7,7 @@ import { Context } from '../../context';
 import { countries } from '../../datasources/countriesList';
 
 
+
 @Resolver()
 export class RegisterResolver {
     constructor() {
