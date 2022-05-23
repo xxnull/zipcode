@@ -23,33 +23,47 @@ function LoadForm(
     <div className="App">
       <header className="App-header">
         <div>
+          <h1>Zipcode Search</h1>
+        </div>
+        <div>
           <form
             onSubmit={(e) => {
               HandleSubmit(e, mutator, zipinput.value, country);
             }}
           >
             <input
+              placeholder="Zipcode"
               ref={(node) => {
                 zipinput = node;
               }}
             />
 
             <select onChange={(e) => setCountry(e.target.value)}>
-              {renderOptions(countries)}
+              {RenderOptions(countries)}
             </select>
 
-            <button type="submit">Search Zip code</button>
+            <button type="submit">Search</button>
           </form>
         </div>
       </header>
-      <div className="container">
+      <div className="App-container">
         <div>
           {last5Entries?.map((element: any) => {
             return (
               <div>
-                <div>{element.country}</div>
-                <div>{element["post code"]}</div>
-                <div>{getPlaces(element.places)}</div>
+                <div className="mapHeader">
+                  <div className="title" key={element.country}>
+                    {element.country}
+                  </div>
+                  <div className="zip" key={element["post code"]}>
+                    {element["post code"]}
+                  </div>
+                </div>
+                <ul className="queryResults">
+                  <li key={element.places[0].latitude}>
+                    {getPlaces(element.places)}
+                  </li>
+                </ul>
               </div>
             );
           })}
@@ -89,14 +103,12 @@ function HandleSubmit(e: any, mutator: any, zipinput: string, country: string) {
 function getPlaces(places: any) {
   return places?.map((e: any) => {
     return (
-      <div>
-        <ul>
-          <li key={1}>{e.latitude}</li>
-          <li key={2}>{e.longitude}</li>
-          <li key={3}>{e["place name"]}</li>
-          <li key={4}>{e.state}</li>
-        </ul>
-      </div>
+      <ul className="placesList">
+        <li key={e.latitude}>{e.latitude}</li>
+        <li key={e.longitude}>{e.longitude}</li>
+        <li key={e["place name"]}>{e["place name"]}</li>
+        <li key={e.state}>{e.state}</li>
+      </ul>
     );
   });
 }
@@ -107,8 +119,11 @@ function getPlaces(places: any) {
  * @param countries - Array<country> - this is the array of countries that we're going to map over.
  * @returns An array of option elements.
  */
-function renderOptions(countries: Array<country>) {
-  return countries.map((country: country, counter: number) => {
+function RenderOptions(countries: Array<country>) {
+  let counter = 0;
+  return countries.map((country: country) => {
+    // const value = country.value.toLowerCase();
+    counter = counter + 1;
     return (
       <option key={counter} value={country.value}>
         {country.value}

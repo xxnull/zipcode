@@ -7,16 +7,12 @@ import { GoogleMapBuilder } from "./GoogleMapBuilder";
  */
 function LoadResults(data: any) {
   const element = JSON.parse(data.register.json);
+
   return (
     <div className="container">
-      <div className="header">
-        <ul className="list">
-          <li key={1}>{element.country} </li>
-          <li key={2}>{element.places[0].longitude} </li>
-          <li key={3}>{element.places[0].latitude}</li>
-          <li key={4}> {element.places[0].state}</li>
-          <li key={5}> {element.places[0]["place name"]}</li>
-        </ul>
+      <div className="mapHeader">
+        <div className="country">{element.country}</div>
+        <div className="places">{getPlaces(element.places)}</div>
       </div>
       <div className="googleMap">
         {GoogleMapBuilder(
@@ -26,6 +22,19 @@ function LoadResults(data: any) {
       </div>
     </div>
   );
+}
+
+function getPlaces(places: any) {
+  return places.map((e: any) => {
+    return (
+      <div className="description">
+        {" "}
+        <span> {e["place name"]}</span> / <span>State: {e.state}</span> /{" "}
+        <span>Latitude: {e.latitude}</span> / /{" "}
+        <span>Longitude: {e.longitude}</span>
+      </div>
+    );
+  });
 }
 
 export { LoadResults };

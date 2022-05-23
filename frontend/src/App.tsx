@@ -16,8 +16,8 @@ import "./App.css";
  */
 function App() {
   const [mutator, { data, loading, error }] = useMutation(REGISTER_QUERY);
-  let [country, setCountry] = useState("");
   const History = GetHistory();
+  let [country, setCountry] = useState("");
   if (loading) return <p>Loading...</p>;
   if (error) {
     return errors(error);

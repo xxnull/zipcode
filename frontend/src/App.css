@@ -1,25 +1,25 @@
-/* import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css'; */
-
 body {
   font-family: "Roboto", sans-serif;
-  background-color: rgb(12, 12, 12);
+  background-color: #f5f5f5;
 }
 
 .App {
   text-align: center;
 }
 .App-header {
-  background-color: rgb(0 40 123);
-  min-height: 10vh;
+  /* background-color: #13c4f4; */
+  min-height: 20vh;
   display: flex;
   flex-direction: column;
   /* align-items: center; */
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.App-container {
+  /* background-color: #13c4f4; */
+  height: 80vh;
 }
 
 .App-link {
@@ -34,4 +34,81 @@ body {
   to {
     transform: rotate(360deg);
   }
+}
+
+input {
+  width: 50%;
+  padding: 13px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 0;
+}
+
+select {
+  width: 10%;
+  padding: 12px 20px;
+  margin: 8px 10px;
+  box-sizing: border-box;
+  border: 0;
+  outline: none;
+}
+
+h1 {
+  color: #bbb;
+}
+
+button {
+  width: 10%;
+  padding: 13px 20px;
+  margin: px 10px;
+  box-sizing: border-box;
+  border: 0;
+  background: #ddd;
+}
+
+.placesList {
+  margin: 10px;
+  display: flex;
+  flex-flow: row wrap;
+  position: relative;
+  width: auto;
+}
+.placesList li {
+  list-style: none;
+  font-size: 1vh;
+  text-align: justify;
+  flex: 1 1 18%;
+  height: auto;
+  padding-bottom: 7px;
+  border-bottom: 0.5px solid #ddd;
+  width: auto;
+}
+
+.queryResults {
+  padding: 0px;
+}
+.queryResults li {
+  font-size: 1.3vh;
+  list-style: none;
+}
+
+.title {
+  margin-top: 50px;
+  margin-bottom: 0px;
+}
+.zip {
+  margin-bottom: 50px;
+}
+
+.mapHeader {
+  height: 10vh;
+}
+.country {
+  padding-top: 40px;
+  padding-left: 20px;
+}
+
+.description {
+  padding-left: 20px;
+  font-size: 1.2vh;
 }
