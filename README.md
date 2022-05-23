@@ -45,4 +45,5 @@ Search for the zipcode you want!
 - Better deployment with just 1 command.
 - Auto refresh
 - Map markers
-- Unit tests
+- Unit test
+- Nice looking flags on select input
